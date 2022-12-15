@@ -8,4 +8,6 @@ export abstract class NotificationsRepository{
 
     public abstract save(notification: Notification): Promise<void>;
 
+    public abstract countManyByRecipientId(recipientId: string): Promise<number>;
+
 }
