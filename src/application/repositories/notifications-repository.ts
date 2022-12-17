@@ -10,4 +10,6 @@ export abstract class NotificationsRepository{
 
     public abstract countManyByRecipientId(recipientId: string): Promise<number>;
 
+    public abstract findManyByRecipientId(recipientId: string): Promise<Notification[]>;
+
 }
