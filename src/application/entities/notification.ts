@@ -51,8 +51,12 @@ export class Notification{
         return this.props.category;
     }
 
-    public set readAt(readAt: Date | null | undefined){
-        this.props.readAt = readAt;
+    public Read(){
+        this.props.readAt = new Date();
+    }
+
+    public Unread(){
+        this.props.readAt = null;
     }
 
     public get readAt(): Date | null | undefined{
