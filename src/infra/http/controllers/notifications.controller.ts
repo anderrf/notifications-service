@@ -37,7 +37,7 @@ export class NotificationsController {
   @Get('count/from/:recipientId')
   public async countFromRecipient(
     @Param('recipientId') recipientId: string
-  ){
+  ) : Promise<{count: number}> {
     const { count } = await this.countRecipientNotifications.execute({
       recipientId
     });
@@ -49,7 +49,7 @@ export class NotificationsController {
   @Patch(':id/read')
   public async read(
     @Param('id') id: string
-  ){
+  ) : Promise<void> {
     await this.readNotification.execute({
       notificationId: id
     });
@@ -58,7 +58,7 @@ export class NotificationsController {
   @Patch(':id/unread')
   public async unread(
     @Param('id') id: string
-  ){
+  ) : Promise<void> {
     await this.unreadNotification.execute({
       notificationId: id
     });
@@ -80,7 +80,7 @@ export class NotificationsController {
   @Patch(':id/cancel')
   public async cancel(
     @Param('id') id: string
-  ){
+  ) : Promise<void> {
     await this.cancelNotification.execute({
       notificationId: id
     }); 
